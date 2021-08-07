@@ -10,6 +10,13 @@
        
 </head>
 <body>
+
+<h1 class="logo">
+<a href="/">LOGO DE MARCA</a>
+
+</h1>
+
+
 <h1>Ingresa</h1>
 <form action="login.php" method="post">
     <input type="text" name="email" placeholder="Ingresa tu email">

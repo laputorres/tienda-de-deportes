@@ -8,6 +8,11 @@
     <title>Bienvenido</title>
 </head>
 <body>
+    
+<?php
+require "header.php"
+?>
+
 
 <h1>Registrate o Ingresa</h1>
 

@@ -1,3 +1,8 @@
+<?php
+require 'database.php'
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,15 +14,15 @@
     
        
 </head>
-<body>
 
-<h1 class="logo">
-<a href="/">LOGO DE MARCA</a>
-
-</h1>
+<?php
+require "header.php"
+?>
 
 
 <h1>Ingresa</h1>
+
+<span>o <a href="signup.php">Registrate</a></span>
 <form action="login.php" method="post">
     <input type="text" name="email" placeholder="Ingresa tu email">
     <input type="password" name="password" placeholder="tu contraseña">

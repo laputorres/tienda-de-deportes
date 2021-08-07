@@ -3,6 +3,11 @@
     --color-primary: #E9473F
 }
 
+body {
+    margin: auto;
+    padding:0 40%;
+}
+
 header {
     height: 637px;
     width: 100%;
@@ -26,11 +31,14 @@ header {
     width: 100%;
     height: 40%;
     text-align: center;
+    margin-top: 3vh;
     
 }
 
 .logo a{
     text-decoration: none;
+    font-weight: 900;
+    color: #000;
 }
 
 .menu__item {
@@ -80,9 +88,11 @@ header {
 /* formulario ingreso */
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="confirm_password"] {
     outline: none;
     padding: 20px;
+    font-size: 3vh;
     display: block;
     width: 300px;
     border-radius: 5px;
@@ -91,6 +101,7 @@ input[type="password"] {
 }
 
 input[type="submit"] {
+    
     padding: 10px;
     color: #fff;
     background: #0098cb;

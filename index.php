@@ -8,9 +8,9 @@
     <title>Bienvenido</title>
 </head>
 <body>
-    
+
 <?php
-require "header.php"
+require "./partials/header.php"
 ?>
 
 

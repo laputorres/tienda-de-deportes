@@ -1,5 +1,27 @@
 <?php
-require 'database.php'
+require 'database.php';
+
+$message = "";
+
+if (!empty($_POST['email']) &&  !empty($_POST['password'])) {
+  $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+  $stmt = $conn->prepare($sql);
+  $stmt->bindParam(':email',$_POST['email']); 
+  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+  $stmt->bindParam(':password',$password);
+
+  if ($stmt->execute()){
+      $message = "estas bien wey";
+  } else {
+      $message =  "eres la riata";
+  }
+
+
+}
+
+
+
+
 ?>
 
 
@@ -12,10 +34,15 @@ require 'database.php'
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Registro</title>
 </head>
-<body>
-    <?php
-    require "header.php"
-    ?>
+
+
+<?php
+require "./partials/header.php"
+?>
+
+<?php if(!empty($message)): ?>
+ <p><?= $message ?></p>
+<?php endif; ?>
 
     <h1>Registrate</h1>
 

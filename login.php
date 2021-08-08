@@ -1,10 +1,36 @@
 <?php
-require 'database.php'
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header('Location: /tienda-de-deportes');
+  }
 
 
-if (!empty($_POST['email'] && !empty($_POST['password']) )){
-    $records = $conn->prepare('SELECT id, email, password FROM users')
-}
+require 'database.php';
+
+
+if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :email');
+    $records->bindParam(':email', $_POST['email']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $message = '';
+
+    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
+      $_SESSION['user_id'] = $results['id'];
+      header('Location: /tienda-de-deportes');
+    } else {
+      $message = 'Sorry, those credentials do not match';
+    }
+  }
+
+
+
+
+
+
 
 
 
@@ -30,7 +56,12 @@ require "./partials/header.php"
 
 <h1>Ingresa</h1>
 
-<span>o <a href="signup.php">Registrate</a></span>
+
+<?php if(!empty($message)): ?>
+ <p><?= $message ?></p>
+<?php endif; ?> 
+
+<span>o <a href="sigup.php">Registrate</a></span>
 <form action="login.php" method="post">
     <input type="text" name="email" placeholder="Ingresa tu email">
     <input type="password" name="password" placeholder="tu contraseña">

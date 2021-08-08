@@ -5,11 +5,12 @@ $username = 'sql5429748';
 $password = 'iXjZp4Y4yj';
 $database = 'sql5429748';
 
-try {
-    $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+$link = mysqli_connect($server, $username, $password, $database);
 
-} catch (PDOException $e) {
-    die ('Connected failed: '.$e->getMessage());
+//checar conexión
+
+if($link === false) {
+    die("ERROR: no estas conectado. " . mysqli_error());
 }
 
 

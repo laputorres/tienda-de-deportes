@@ -110,11 +110,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 
 <!-- CABECERA -->
-
+<header>
 <?php
 require "./partials/header.php"
 ?>
-
+</header>
 
 <!-- FORMULARIO -->
 

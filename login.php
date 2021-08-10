@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="wrapper formulario">
     <div class="formulario_titulo">
-    <h2>Login</h2>
+    <h1>Ingresa</h1>
     <p>Complete los datos para iniciar sesión.</p>
     </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method=post>

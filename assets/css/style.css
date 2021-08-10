@@ -1,14 +1,25 @@
 * {
     margin: 0;
-    --color-primary: #a3b317;
+    --color-primary: rgba(1, 179, 227);
+    --color-secundary: rgb(0, 55, 100);
 }
 
 body {
     margin: 0;
     padding:0 ;
+    
 }
 
 
+/* MENU */
 
-/* formulario ingreso */
+.menu {
+    width: 90%;
+    margin: auto;
+    background: var(--color-secundary) !important;
+    border-radius: 0 0 30px 30px;
+}
 
+.container a img {
+    width: 10% !important;
+}
